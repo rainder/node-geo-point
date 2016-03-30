@@ -3,17 +3,17 @@
 `$ npm install geo-point`
 
 ## Constructor
-### `new GeoPoint(latitude: Number, longitude: Number)`
+#### `new GeoPoint(latitude: Number, longitude: Number)`
 ## Static methods
-### `fromGeoJSON({type: String, coordinates: [longitude: Number, latitude: Number]}): GeoPoint`
-### `fromObject({latitude: Number, longitude: Number}): GeoPoint`
-### `calculateDistance(p1: GeoPoint, p2: GeoPoint): Number`
+#### `fromGeoJSON({type: String, coordinates: [longitude: Number, latitude: Number]}): GeoPoint`
+#### `fromObject({latitude: Number, longitude: Number}): GeoPoint`
+#### `calculateDistance(p1: GeoPoint, p2: GeoPoint): Number`
 Returns a distance between points in meters
-### `fromLatLngArray([latitude: Number, longitude: Number]): GeoPoint`
-### `fromLngLatArray([longitude: Number, longitude: Number]): GeoPoint`
+#### `fromLatLngArray([latitude: Number, longitude: Number]): GeoPoint`
+#### `fromLngLatArray([longitude: Number, longitude: Number]): GeoPoint`
 ## Instance methods
-### `toString(): String`
-### `toGeoJSON(): Object`
+#### `toString(): String`
+#### `toGeoJSON(): Object`
 returns a GeoJSON representation
 ```js
 {
@@ -21,7 +21,7 @@ returns a GeoJSON representation
   "coordinates": [-0.15, 51.5]
 }
 ```
-### `toPlainObject(): Object`
+#### `toPlainObject(): Object`
 returns a plain `{latitude: Number, longitude: Number}` object
-### `toLatLngArray(): Array`
-### `toLngLatArray(): Array`
+#### `toLatLngArray(): Array`
+#### `toLngLatArray(): Array`
