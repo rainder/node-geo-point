@@ -1,0 +1,32 @@
+{
+  "name": "geo-point",
+  "version": "1.0.0",
+  "description": "geo point",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rainder/node-geo-point.git"
+  },
+  "keywords": [
+    "geo",
+    "point",
+    "struct"
+  ],
+  "author": "Andrius Skerla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rainder/node-geo-point/issues"
+  },
+  "homepage": "https://github.com/rainder/node-geo-point#readme",
+  "dependencies": {
+    "compute-deg2rad": "^1.0.0",
+    "lodash": "^4.6.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.4.5"
+  }
+}
