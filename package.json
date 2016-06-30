@@ -1,6 +1,6 @@
 {
   "name": "geo-point",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "geo point",
   "main": "index.js",
   "scripts": {
