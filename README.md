@@ -102,6 +102,7 @@ const point = GeoPoint.fromGeoJSON({
   type: 'Point',
   coordinates: [-0.15, 51.5]
 });
+```
 
 ##### `fromObject({latitude: Number, longitude: Number}): GeoPoint`
 factory function
