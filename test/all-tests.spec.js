@@ -16,7 +16,7 @@ describe('all-tests', function () {
     const p2 = new GeoPoint(51.6, -0.16);
 
     const distance = GeoPoint.calculateDistance(p1, p2);
-    distance.should.equals(11141.657060861922);
+    Math.round(distance).should.equals(11142);
   });
 
   it('should convert to GeoJSON', function () {
@@ -39,7 +39,7 @@ describe('all-tests', function () {
       latitude: 51.5,
       longitude: -0.15
     });
-    const o = p1.toPlainObject();
+    const o = p1.toObject();
     o.should.have.keys(['latitude', 'longitude']);
 
     o.latitude.should.equals(51.5);
@@ -52,9 +52,32 @@ describe('all-tests', function () {
       coordinates: [-0.15, 51.5]
     });
 
-    p1.toPlainObject().should.deep.equals({
+    p1.toObject().should.deep.equals({
       latitude: 51.5,
       longitude: -0.15
     });
   });
+
+  it('should calculate bearing', function () {
+    Math.round(GeoPoint.calculateBearing(
+      new GeoPoint(51.5, -0.15),
+      new GeoPoint(51.5, 1.15)
+    )).should.equals(360);
+
+    GeoPoint.calculateBearing(
+      new GeoPoint(51, 0),
+      new GeoPoint(52, 0)
+    ).should.equals(360);
+  });
+
+  it('should calculate destination', function () {
+    const point = new GeoPoint(51, 0);
+
+    const d1 = point.calculateDestination(10000, 360);
+
+    d1.longitude.should.equals(0);
+    Math.round(d1.latitude).should.equals(51);
+  });
+
+
 });
