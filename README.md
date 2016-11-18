@@ -42,20 +42,38 @@ returns **lat,lng** string
 
 ##### `toGeoJSON(): Object`
 returns a GeoJSON representation
+
 ```js
-{
-  "type": "Point",
-  "coordinates": [-0.15, 51.5]
-}
+const point = new GeoPoint(51.5, -0.15);
+const geoJson = point.toGeoJSON();
+
+geoJson.should.have.keys(['type', 'coordinates']);
+geoJson.type.should.equals('Point');
+geoJson.coordinates.should.deep.equals([-0.15, 51.5]);
 ```
 
 ##### `toObject(): Object`
-returns a plain `{latitude: Number, longitude: Number}` object
+returns a plain `{latitude: Number, longitude: Number}` Object
+
+```js
+const point = new GeoPoint(51.5, -0.15);
+point.toPlainObject().should.have.keys(['latitude', 'longitude']);
+```
 
 ##### `toLatLngArray(): Array`
 returns `[lat, lng]`
 
+```js
+const point = new GeoPoint(51.5, -0.15);
+point.toLatLngArray().should.deep.equals([51.5, -0.15]);
+```
+
 ##### `toLngLatArray(): Array`
+
+```js
+const point = new GeoPoint(51.5, -0.15);
+point.toLngLatArray().should.deep.equals([-0.15, 51.5]);
+```
 
 returns `[lng, lat]`
 
@@ -69,10 +87,42 @@ Returns destination point
 ##### `calculateDistance(p1: GeoPoint, p2: GeoPoint): Number`
 Returns a distance between points in meters
 
+```js
+const point1 = new GeoPoint(51.5, -0.15);
+const point2 = new GeoPoint(51.6, -0.15);
+
+const distanceInMeters = GeoPoint.calculateDistance(point1, point2);
+```
+
 ##### `fromGeoJSON({type: String, coordinates: [longitude: Number, latitude: Number]}): GeoPoint`
+factory function
+
+```js
+const point = GeoPoint.fromGeoJSON({
+  type: 'Point',
+  coordinates: [-0.15, 51.5]
+});
 
 ##### `fromObject({latitude: Number, longitude: Number}): GeoPoint`
+factory function
+
+```js
+const point = GeoPoint.fromObject({
+  latitude: 51.5,
+  longitude: -0.15
+});
+```
 
 ##### `fromLatLngArray([latitude: Number, longitude: Number]): GeoPoint`
+factory function
+
+```js
+const point = GeoPoint.fromLatLngArray([51.5, -0.15]);
+```
 
 ##### `fromLngLatArray([longitude: Number, longitude: Number]): GeoPoint`
+factory function
+
+```js
+const point = GeoPoint.fromLngLatArray([-0.15, 51.5]);
+```
