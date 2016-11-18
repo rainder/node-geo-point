@@ -62,12 +62,17 @@ describe('all-tests', function () {
     Math.round(GeoPoint.calculateBearing(
       new GeoPoint(51.5, -0.15),
       new GeoPoint(51.5, 1.15)
-    )).should.equals(360);
+    )).should.equals(89);
 
     GeoPoint.calculateBearing(
       new GeoPoint(51, 0),
       new GeoPoint(52, 0)
-    ).should.equals(360);
+    ).should.equals(0);
+
+    Math.round(GeoPoint.calculateBearing(
+      new GeoPoint(-6.231624, 106.802569),
+      new GeoPoint(-6.22063, 106.61694)
+    )).should.equals(273);
   });
 
   it('should calculate destination', function () {
