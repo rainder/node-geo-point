@@ -1,3 +1,9 @@
 'use strict';
 
-module.exports = require('./lib/geo-point');
+const GeoPoint = require('./lib/geo-point');
+
+module.exports = GeoPoint;
+
+Object.defineProperty(exports, "__esModule", { value: true });
+
+module.exports.default = GeoPoint;

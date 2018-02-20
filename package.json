@@ -4,7 +4,7 @@
   "description": "geo point",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc mocha test/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,22 @@
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "nyc": "^11.4.1"
+  },
+  "nyc": {
+    "extension": [
+      ".js"
+    ],
+    "reporter": [
+      "html",
+      "text-summary"
+    ],
+    "exclude": [
+      "node_modules",
+      "coverage",
+      "test/**/*.spec.ts"
+    ],
+    "all": true
   }
 }
