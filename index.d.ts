@@ -29,9 +29,9 @@ export default class GeoPoint {
 
   calculateDistance(point: GeoPoint): number;
 
-  static fromLatLngArray(array: number[]): GeoPoint;
+  static fromLatLngArray(array: [number, number]): GeoPoint;
 
-  static fromLngLatArray(array: number[]): GeoPoint;
+  static fromLngLatArray(array: [number, number]): GeoPoint;
 
   toString(): string;
 
@@ -39,7 +39,7 @@ export default class GeoPoint {
 
   toObject(): GeoPointObject;
 
-  toLatLngArray(): number;
+  toLatLngArray(): [number, number];
 
-  toLngLatArray(): number;
+  toLngLatArray(): [number, number];
 }
