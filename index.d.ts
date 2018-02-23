@@ -11,6 +11,9 @@ interface GeoPointObject {
 }
 
 export default class GeoPoint {
+  latitude: number;
+  longitude: number;
+
   constructor(latitude: number, longitude: number);
 
   static fromGeoJSON(object: GeoJSON): GeoPoint;
