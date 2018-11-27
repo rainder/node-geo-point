@@ -36,6 +36,14 @@ const endPoint = new GeoPoint(52.5, -1.15);
 const distance = startPoint.calculateDistance(endPoint);
 
 ```
+#### `toTile(zoom: number): TileObject`
+
+Calculates the tile
+
+```js
+const startPoint = new GeoPoint(51.5, -0.15);
+const { x, y } = startPoint.toTile(7);
+```
 
 ##### `toString(): String`
 returns **lat,lng** string
