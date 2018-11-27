@@ -84,5 +84,13 @@ describe('all-tests', function () {
     Math.round(d1.latitude).should.equals(51);
   });
 
+  it('should return tile coordinates', function () {
+    const zoom = 18;
+    const point = new GeoPoint(51.5218054, -0.1172997);
 
+    const tile = point.toTile(zoom);
+
+    tile.x.should.equals(130986);
+    tile.y.should.equals(87152);
+  });
 });

@@ -5,6 +5,11 @@ interface GeoJSON {
   coordinates: number[];
 }
 
+interface TileObject {
+  x: number;
+  y: number;
+}
+
 interface GeoPointObject {
   latitude: number;
   longitude: number;
@@ -45,4 +50,8 @@ export default class GeoPoint {
   toLatLngArray(): [number, number];
 
   toLngLatArray(): [number, number];
+
+  static toTile(point: GeoPoint, zoom: number): TileObject;
+
+  toTile(zoom: number): TileObject;
 }
