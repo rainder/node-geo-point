@@ -1,6 +1,6 @@
 {
   "name": "geo-point",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "geo point",
   "main": "index.js",
   "scripts": {
@@ -24,12 +24,12 @@
   "dependencies": {
     "compute-deg2rad": "^1.0.0",
     "compute-rad2deg": "^1.0.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^5.2.0",
-    "nyc": "^11.9.0"
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1"
   },
   "nyc": {
     "extension": [
