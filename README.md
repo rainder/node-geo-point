@@ -19,7 +19,7 @@ const bearing = startPoint.calculateBearing(endPoint);
 
 #### `calculateDestination(distance: Number, bearing: Number): GeoPoint`
 
-Caculates destination point using start point, bearing and dintace in meters.
+Caculates destination point using start point, bearing and distance in meters.
 
 ```js
 const startPoint = new GeoPoint(51.5, -0.15);
