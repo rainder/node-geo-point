@@ -1,7 +1,5 @@
-'use strict';
-
-const chai = require('chai');
-const GeoPoint = require('./..');
+import chai, { expect } from 'chai';
+import { GeoPoint } from './geo-point';
 chai.should();
 
 describe('all-tests', function () {
@@ -92,5 +90,15 @@ describe('all-tests', function () {
 
     tile.x.should.equals(130986);
     tile.y.should.equals(87152);
+  });
+
+  it('should adjust precision', async () => {
+    const point1 = new GeoPoint(1.23456789, 2.3456789);
+    const point2 = point1.adjustPrecision(3);
+
+    expect(point2).to.deep.equals({
+      latitude: 1.235,
+      longitude: 2.346,
+    });
   });
 });
